@@ -1,26 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-centarus.py
-─────────────────────
-.NET DLL / EXE dosyalarından (decompiler KULLANMADAN) gömülü hassas
-bilgileri tespit eder, sonuçları terminalde renkli gösterir ve CSV / JSON
-dosyalarına kaydeder.
-
-Kullanım örnekleri
-──────────────────
-  # Basit tarama (tek dosya)
-  python centarus.py C:\app\my.dll
-
-  # Birden fazla dosya + klasör, recursive, özel pattern dosyası
-  python centarus.py C:\bin  C:\tools\a.dll  ^
-      --recursive ^
-      --patterns custom_patterns.txt ^
-      --output findings.csv
-
-  # JSON çıktısı
-  python centarus.py C:\bin --output findings.json
-"""
 import argparse, os, re, json, csv, sys, pathlib, base64, textwrap
 from typing import List, Dict, Any
 from collections import defaultdict
